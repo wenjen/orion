@@ -1,7 +1,8 @@
 clear all; clc;close all
 include_sift=false;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-load('orion_10_common_11_view.mat')
+%load('orion_10_common_11_view.mat')
+load('bk/common_points_color.mat')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % step 0: common data for affine and projective
 data_spec=struct('double_match',double_match,'view',view,'common_points_num',common_points_num);
