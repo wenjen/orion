@@ -12,5 +12,5 @@ line_set=[contour{1};contour{1}(2:end) contour{1}(1)];
 %line_set=[line_set [contour{5};contour{5}(2:end) contour{5}(1)]];
 line_set=[line_set line1'];% line2'];
 meadow=[3,4,5];
-info=struct('lines',line_set,'meadow',meadow);
+info=struct('lines_to_draw',line_set,'meadow',meadow);
 
