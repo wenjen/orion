@@ -8,6 +8,9 @@ end
 info=draw_line_orion();
 lines_to_draw=info.lines_to_draw;
 
+interested_radius_ratio=4;
+interested_center=mean(real_X(:,1:data_spec.common_points_num),2);
+interested_radius=norm(std(real_X(:,1:data_spec.common_points_num),0,2))*interested_radius_ratio;
 
 axis_length=10;camera_size=1;
 text(axis_length,0,0,'X')
@@ -27,8 +30,9 @@ for i=1:length(lines_to_draw)
 end
 global expanded_color
 for j=1:length(real_X)
-    plot_cell{j+length(lines_to_draw)} = scatter3(real_X(1,j),real_X(2,j),real_X(3,j),15,expanded_color(j,:),'filled');
-    hold on
+    if norm(real_X(:,j)-interested_center)<interested_radius
+        plot_cell{j+length(lines_to_draw)} = scatter3(real_X(1,j),real_X(2,j),real_X(3,j),15,expanded_color(j,:),'filled');
+    end
 end
 meadow_base=[];
 meadow=info.meadow;
