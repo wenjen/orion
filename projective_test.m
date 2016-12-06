@@ -24,7 +24,7 @@ affine_x_out=mx_affine(MX_split+1:end);
 affine_X=reshape(affine_x_out,3,[]);
 %save('MX_test','real_X','M')
 %[~,M]=affine_M(mx,data_spec)
-%visualize_orion(affine_X,M,colorpoints)
+%visualize_orion(affine_X,M,data_spec,color_points
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % step 2 : use the x coordinate plus random camera parameter to initialize
@@ -45,5 +45,5 @@ projective_x_out=mx_projective(MX_split+1:end);
 projective_X=reshape(projective_x_out,3,[]);
 %save('MX_test','real_X','M')
 [~,M]=projective_M(mx_projective,data_spec);
-visualize_orion(projective_X,M,colorpoints)
+visualize_orion(projective_X,M,data_spec,color_points);
 
